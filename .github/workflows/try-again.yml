@@ -1,0 +1,30 @@
+name: on_Linux_hw
+  
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+        
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: Git clone our repo
+        uses: actions/checkout@v1
+        
+      - name: Setup Ninja
+        run : sudo apt-get install ninja-build
+        
+      - name: build_act
+        run: |
+          mkdir build
+          cd build   
+          # cmake -DCMAKE_C_COMPILER=gcc 9 -DCMAKE_CXX_COMPILER=g++ 9 ..
+          cmake -G Ninja ..
+          cmake --build .
+          #make
+          # Make tests
+          ctest 
