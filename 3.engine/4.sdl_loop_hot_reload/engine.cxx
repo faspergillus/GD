@@ -373,9 +373,7 @@ pip::game* reload_game(pip::game*   old,
                   << " " << SDL_GetError() << std::endl;
         return nullptr;
     }
-    // void* destroy_game_func_ptr = SDL_LoadFunction(game_handle,
-    // "destroy_game");
-
+    
     typedef decltype(&create_game) create_game_ptr;
 
     auto create_game_func =
