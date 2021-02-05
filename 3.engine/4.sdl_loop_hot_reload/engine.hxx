@@ -60,7 +60,7 @@ struct game
     virtual void render() const  = 0;
 };
 
-} // end namespace om
+} // end namespace pip
 
 /// You have to implement next functions in your code for engine
 /// to be able to load your library
